@@ -146,6 +146,14 @@ os.environ["OUROBOROS_DIAG_HEARTBEAT_SEC"] = str(DIAG_HEARTBEAT_SEC)
 os.environ["OUROBOROS_DIAG_SLOW_CYCLE_SEC"] = str(DIAG_SLOW_CYCLE_SEC)
 os.environ["TELEGRAM_BOT_TOKEN"] = str(TELEGRAM_BOT_TOKEN)
 
+# Optional: Gmail credentials for email sending tool
+_gmail_addr = get_secret("GMAIL_ADDRESS", default="")
+_gmail_app_pw = get_secret("GMAIL_APP_PASSWORD", default="")
+if _gmail_addr:
+    os.environ["GMAIL_ADDRESS"] = str(_gmail_addr)
+if _gmail_app_pw:
+    os.environ["GMAIL_APP_PASSWORD"] = str(_gmail_app_pw)
+
 if str(ANTHROPIC_API_KEY or "").strip():
     ensure_claude_code_cli()
 
