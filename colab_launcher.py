@@ -154,6 +154,17 @@ if _gmail_addr:
 if _gmail_app_pw:
     os.environ["GMAIL_APP_PASSWORD"] = str(_gmail_app_pw)
 
+# Google Calendar tool credentials
+_gcal_client_id = get_secret("GOOGLE_CALENDAR_CLIENT_ID", default="")
+_gcal_client_secret = get_secret("GOOGLE_CALENDAR_CLIENT_SECRET", default="")
+_gcal_refresh_token = get_secret("GOOGLE_CALENDAR_REFRESH_TOKEN", default="")
+if _gcal_client_id:
+    os.environ["GOOGLE_CALENDAR_CLIENT_ID"] = str(_gcal_client_id)
+if _gcal_client_secret:
+    os.environ["GOOGLE_CALENDAR_CLIENT_SECRET"] = str(_gcal_client_secret)
+if _gcal_refresh_token:
+    os.environ["GOOGLE_CALENDAR_REFRESH_TOKEN"] = str(_gcal_refresh_token)
+
 if str(ANTHROPIC_API_KEY or "").strip():
     ensure_claude_code_cli()
 
