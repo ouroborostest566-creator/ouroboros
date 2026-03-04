@@ -116,6 +116,11 @@ EXPECTED_TOOLS = [
     "enable_tools",
     # Email
     "send_email",
+    # Google Calendar
+    "google_calendar_auth_url",
+    "google_calendar_auth_code",
+    "google_calendar_create_event",
+    "google_calendar_list_events",
 ]
 
 
