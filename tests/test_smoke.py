@@ -114,6 +114,8 @@ EXPECTED_TOOLS = [
     "compact_context",
     "list_available_tools",
     "enable_tools",
+    # Email
+    "send_email",
 ]
 
 
